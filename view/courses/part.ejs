@@ -1,0 +1,115 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/courses/part.css">
+</head>
+
+<div class="partForm">
+    <div class="row dir">
+        <style>
+            a{
+                text-decoration: none;
+                color: #f3f3f3;
+            }
+        </style>
+        <h2 class="textDark main"><a href="/c/all"><%= dir %></a>> </h2><h2 class="textDark second"> <a href="/c/<%= course %>"><%= course %></a>> <a href="/c/<%= course %>/<%= part %>"><%= part %></a></h2>
+    </div>
+    <div class="row vid">
+        <video id="vids" src="" controls poster="/media/icons/Video play 75x75.svg"></video>
+        <div id="details" class="col">
+            <h2 id="title" class="textDark"><%= part %></h2>
+            <h2 id="dur" class="textDark">00:00</h2>
+            <div class="row listo">
+                <button>Previous</button>
+                <button>Next</button>
+            </div>
+            <div class="col">
+                <h2 class="textDark" id="attch">Attachments</h2>
+                <h2 class="textDark">.</h2>
+                <h2 class="textDark">.</h2>
+                <h2 class="textDark">.</h2>
+                <h2 class="textDark">.</h2>
+                <h2 class="textDark">.</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2 class="textDark" id="disc">Discussion section</h2>
+    </div>
+    <div class="row" style="grid-template-columns: 3fr 1fr;padding: 30px 0px;place-items: start;">
+        <div class="col comments bgDark2">
+            <div class="comment">
+                <img class="userpic" src="/media/icons/Profile icon 50x50.svg" alt="">
+                <h2 class="username textDark">Dr gen</h2>
+                <h2 class="comm textDark">Any comment</h2>
+            </div>
+            <div class="comment">
+                <img class="userpic" src="/media/icons/Profile icon 50x50.svg" alt="">
+                <h2 class="username textDark">Dr gen</h2>
+                <h2 class="comm textDark">Any comment</h2>
+            </div>
+            <div class="comment">
+                <img class="userpic" src="/media/icons/Profile icon 50x50.svg" alt="">
+                <h2 class="username textDark">Dr gen</h2>
+                <h2 class="comm textDark">Any comment</h2>
+            </div>
+            <div class="comment">
+                <img class="userpic" src="/media/icons/Profile icon 50x50.svg" alt="">
+                <h2 class="username textDark">Dr gen</h2>
+                <h2 class="comm textDark">Any comment</h2>
+            </div>
+            <div class="comment">
+                <img class="userpic" src="/media/icons/Profile icon 50x50.svg" alt="">
+                <h2 class="username textDark">Dr gen</h2>
+                <h2 class="comm textDark">Any comment</h2>
+            </div>
+            <div class="commentor">
+                <input class="CustomAutoInput bgDark1 textDark" type="text" placeholder="Send a comment">
+                <button class="bgDark0 textDark" style="place-self: center;cursor: pointer;">comment</button>
+            </div>
+        </div>
+        <div class="col courses">
+            <h2 id="simi" class="textDark">Similar courses</h2>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+            <div class="course">
+                <video src="" style="width:180px;height: 100px;" controls></video>
+                <div class="col">
+                    <h2 class="textDark stitle">course name</h2>
+                    <h2 class="textDark sdur">00:00</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+/* light */
+
+.bgLight1{
+    background-color: #F3F3F3;
+}
+.bgLight2{
+    background-color: #c3c3c3;
+}
+.bgLight2.hover:hover{
+    background-color: #B9B9B9;
+    color: #232323;
+}
+.hoverLight{
+    color: #c3c3c3;
+}
+.textLight{
+    color: #232323;
+}
+.navLight{
+    color: #B3B3B3;
+    font-weight: 500;
+}
+.navLight:hover{
+    color: #232323;
+    font-weight: 500;
+}
+.btnLight{
+    background-color: #232323;
+}
+.inputLight{
+    background-color: #BEBEBE;
+}
+
+/* dark */
+
+.bgDark1{
+    background-image: linear-gradient(135deg,#232323, #272727);;
+}
+.bgDark2{
+    background-color: #444444;
+}
+.bgDark0{
+    background-color: #121212;
+}
+.bgDark2.hover:hover{
+    background-color: #F3F3F3;
+    color: #232323;
+}
+.bgDark1.light:hover{
+    background-color: #F3F3F3;
+    color: #232323;
+    transition: 0.4s;
+}
+.hoverDark{
+    color: #878683;
+}
+.textDark{
+    color: #F3F3F3;
+    font-weight: 400;
+}
+.navDark{
+    color: #B3B3B3;
+    font-weight: 400;
+}
+.navDark:hover{
+    color: #F3F3F3;
+    font-weight: 400;
+}
+.btnDark{
+    background-color: #F3F3F3;
+}
+.inputDark{
+    background-color: #434343;
+}
+
+/* standard */
+
+.activeColor{
+    background-color: #03A0FF;
+}
+
+.activeText{
+    color: #03A0FF;
+}
+
+.warningColor{
+    color: #FFC107;
+}
+
+.alertColor{
+    color: #DC3545;
+}
+.greyText{
+    color: #878683;
+}
+.activeBtn{
+    color: #F3F3F3;
+}

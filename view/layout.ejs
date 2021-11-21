@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" data-features="Web Components V0">
+        <meta name="theme-color" content="default">
+        <link rel="shortcut icon" href="/media/icons/Genx Logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/normalize.css">
+        <link rel="stylesheet" href="/stylesheets/plugins/theme.css">
+        <script defer src="/scripts/main.js"></script>
+        <script defer src="/scripts/plugins/theme.js"></script>
+        <title>GENX</title>
+    </head>
+    <body theme="dark">
+        <div id="container" class="bgDark1">
+            <%- include('./plugins/navbar.ejs') %>
+            <div id="app">
+                <%- body %>
+                <%- include('./plugins/footer.ejs') %>
+            </div>
+        </div>
+    </body>
+</html>

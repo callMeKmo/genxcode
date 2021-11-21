@@ -1,0 +1,5 @@
+<svg id="Component_15_1" data-name="Component 15 – 1" xmlns="http://www.w3.org/2000/svg" width="343" height="36" viewBox="0 0 343 36">
+  <rect id="Search_Field" data-name="Search Field" width="343" height="36" rx="10" fill="rgba(118,118,128,0.24)"/>
+  <text id="Search" transform="translate(25 25)" fill="#b3b3b3" font-size="16" font-family="NotoSansJP-Light, Noto Sans JP" font-weight="300"><tspan x="0" y="0">Search</tspan></text>
+  <path id="ic_search_24px" d="M15.5,14h-.79l-.28-.27a6.51,6.51,0,1,0-.7.7l.27.28v.79l5,4.99L20.49,19Zm-6,0A4.5,4.5,0,1,1,14,9.5,4.494,4.494,0,0,1,9.5,14Z" transform="translate(308 6.255)" fill="#b3b3b3"/>
+</svg>

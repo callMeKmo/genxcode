@@ -1,0 +1,122 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/main/settings.css">
+    <script defer src="/scripts/main/settings.js"></script>
+</head>
+<div class="appearance">
+    <div class="container">
+    <h2 class="textDark">Appearance</h2>
+    <div class="options">
+        <div class="dark">
+        <div>
+            <h2>Dark mode</h2>
+            <p>switch between light and dark mode</p>
+        </div>
+        <div class="switch-buttun">
+            <label class="switch">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+            </label>
+        </div>
+        </div>
+        <div class="lang">
+        <div>
+            <h2>Language</h2>
+            <p>Choose Language</p>
+        </div>
+
+        <div class="custom-select" style="width: 200px">
+            <select>
+            <option value="0">Select Language:</option>
+            <option value="1">English united state</option>
+            <option value="2">Arabic</option>
+            </select>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="payment">
+    <div class="container">
+    <h2>Payment</h2>
+    <form action="" class="card">
+        <div class="left">
+        <h2>add payment card</h2>
+        <div class="parent">
+            <div class="inputs-box">
+            <label for="credit-number">credit card number</label>
+            <input
+                type="text"
+                name=""
+                id="credit-number"
+                class="big-width"
+            />
+            </div>
+            <div class="inputs-box">
+            <label for="cvv">cvv</label>
+            <input type="text" name="" id="cvv" class="small-width" />
+            </div>
+        </div>
+        <!-- ----------------------------- -->
+
+        <h3>expiry date</h3>
+        <div class="parent">
+            <div class="inputs-box">
+            <label for="Month">Month</label>
+            <input type="text" name="" id="Month" class="small-width" />
+            </div>
+            <div class="inputs-box">
+            <label for="Year">Year</label>
+            <input type="text" name="" id="Year" class="small-width" />
+            </div>
+        </div>
+        </div>
+
+        <!-- ---------------------------- -->
+
+        <div class="center">
+        <div class="center-content">
+            <div class="up">
+            <div class="box">
+                <label for="first-name">first name</label>
+                <input type="text" name="" id="first-name" />
+            </div>
+            <div class="box">
+                <label for="last-name">last name</label>
+                <input type="text" name="" id="last-name" />
+            </div>
+            </div>
+            <div class="up address">
+            <div class="box">
+                <label for="address">address</label>
+                <input type="text" name="" id="address" />
+            </div>
+            </div>
+        </div>
+
+        <div class="center-content">
+            <div class="up">
+            <div class="box">
+                <label for="country">country</label>
+                <input type="text" name="" id="country" />
+            </div>
+            <div class="box">
+                <label for="city">city</label>
+                <input type="text" name="" id="city" />
+            </div>
+            </div>
+            <div class="up">
+            <div class="box">
+                <label for="state">state</label>
+                <input type="text" name="" id="state" />
+            </div>
+            <div class="box">
+                <label for="postal">postal code</label>
+                <input type="text" name="" id="postal" />
+            </div>
+            </div>
+        </div>
+        </div>
+        <input type="submit" value="add"/>
+    </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/plugins/navbar.css">
+    <script defer src="/scripts/plugins/navbar.js"></script>
+</head>
+<header style="background-color: #252525;" id="nav">
+<a style="grid-row: 1/2;grid-column: 1/2;" href="/"><img src="/media/icons/Genx Logo.png" alt=""></a>
+    <form action="/search/" method="get" id="search" class="textDark bgDark2 hover">
+        <input class="customAutoInput" name="for" style="border-radius: 6px;" type="text" placeholder="Search">
+        <button class="" style="cursor: pointer;width: 30px;padding: 4px;"><img style="width: 16px;place-self: center;" src="/media/icons/Search icon 17.49x17.49.svg" alt=""></button>
+    </form>
+    <ul>
+        <li class="navDark navItem"><a class="navDark navItem" href="/n/all">News</a></li>
+        <li class="navDark navItem"><a class="navDark navItem" href="/c/all">Courses</a></li>
+        <li class="navDark navItem"><a class="navDark navItem" href="/b/all">Books</a></li>
+        <li class="navDark navItem"><a class="navDark navItem" href="/lab">Lab</a></li>
+        <li class="navDark navItem"><a class="navDark navItem about" href="#about">About us</a></li>
+    </ul>
+    <img class="bgDark1 light func menuDrop" style="border-radius: 50%;grid-column: 4/-1;grid-row: 1/2;" src="/media/icons/Profile icon 50x50.svg" alt="">
+    <div id="hiddenMenu" style="display: none;grid-column: 4/-1;grid-row:2/-1;width: 170px;border-radius: 12px;z-index: 10000;" class="bgDark2">
+        <button><a class="textDark" href="">Edit Profile</a></button>
+        <button><a class="textDark" href="/settings">settings</a></button>
+        <button style="border:none;"><a class="textDark" href="">logout</a></button>
+    </div>
+</header>
