@@ -5,40 +5,40 @@ const mongoose = require('mongoose')
 // create schema and proprties.
 
 const newSchema = new mongoose.Schema({
-    username: {
+    title: {
         type: String,
         required: true
     },
-    email: {
+    subject: {
         type: String,
         required: true
     },
-    age: {
+    description: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+    rate: {
+        type: Number,
+        default: 0
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    price: {
         type: Number,
         required: true
     },
-    basekey: {
-        type: String,
-        required: true
-    },
-    recoveryEmail: {
-        type: String,
-        required: true
-    },
-    passkey: {
-        type: String,
-        required: true,
-        default: null
-    },
-    type: {
-        type: String,
-        required: true,
-        default: 'user'
-    },
-    interest: {
+    videoList:{
         type: Array,
+        required: true
+    },
+    duration:{
+        type: Number,
+        required: true
     }
 })
 // export the module
 
-export default model('User', newSchema)
+export default model('Course', newSchema)

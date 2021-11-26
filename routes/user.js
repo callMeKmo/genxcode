@@ -10,7 +10,7 @@ router.get('/profile', controller.profile)
 
 router.get('/settings', controller.settings)
 
-router.get('/subscriptions', controller.subscriptions)
+router.get('/library/:type', controller.library)
 
 router.get('/mailbox', controller.mailbox)
 

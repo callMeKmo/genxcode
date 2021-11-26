@@ -12,6 +12,14 @@ router.get('/preview', controller.preview)
 
 router.get('/modify', controller.modify)
 
+// news post requests
+
+router.post('/v/add/:id', controller.create)
+
+router.post('/v/update/:id', controller.update)
+
+router.delete('/v/delete/:id', controller.delete)
+
 //export news router:
 
 module.exports = router

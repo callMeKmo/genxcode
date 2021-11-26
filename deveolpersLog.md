@@ -27,5 +27,11 @@ date: 11/21/2021
 
 //test end
 
-date 11/22/2021
+date 11/26/2021
+
+    report by: Mostafa shrief (update 1.0.0)
+
+        content: set all data models (schemas) and relations and routes and changes on frontEnd files and setup middlewares
+
+        notes: todo (next-setup) => setup controllers and finish authentcation and authorization
 

@@ -40,8 +40,8 @@ const userRoute = require('./routes/user')
 // express server setup:
 
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/view')
-app.set('layout', 'layout')
+app.set('views', __dirname + '/webApp')
+app.set('layout', 'layouts/main')
 app.use(expressLayouts)
 app.use(express.json())
 app.use(cookieParser())
@@ -73,10 +73,6 @@ app.use('/o',authRoute)
 
 // server host:
 
-server.listen(process.env.PORT || 3000, e => {
-        console.log(`Server running: Success.`)
-})
+server.listen(process.env.PORT || 3000, console.log(`Server running: Success.`))
 
-server.on('error', error => {
-    console.error('Server running: Failed, \n Error: ' + error)
-})
+server.on('error', error => console.error('Server running: Failed, \n Error: ' + error))

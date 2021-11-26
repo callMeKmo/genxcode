@@ -8,8 +8,6 @@ const controller = require('../controllers/admin')
 
 router.get('/adminpanel', controller.adminpanel)
 
-router.get('/preview', controller.preview)
-
 router.get('/reports', controller.reports)
 
 router.get('/orders', controller.orders)
@@ -19,6 +17,12 @@ router.get('/users', controller.users)
 router.get('/analysis', controller.analysis)
 
 router.get('/log', controller.log)
+
+// admin post requests:
+
+router.post('/users/:id', controller.usersChange)
+
+router.delete('/users/:id', controller.usersRemove)
 
 //export admin router:
 
