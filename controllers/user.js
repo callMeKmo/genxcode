@@ -1,4 +1,4 @@
-// get home requst:
+// get profile requst:
 
 exports.profile = (req,res)=>{
     res.render('user/profile')
@@ -16,8 +16,8 @@ exports.settings = (req,res)=>{
     res.render('user/settings')
 }
 
-// get subscriptions requst:
+// get library requst:
 
-exports.subscriptions = (req,res)=>{
-    res.render('user/subscription')
+exports.library = (req,res)=>{
+    res.render('user/library')
 }

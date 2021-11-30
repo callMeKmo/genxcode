@@ -1,4 +1,4 @@
-// get action requst:
+// get auth action requst:
 
 exports.action = (req,res)=>{
     switch (req.params.action) {
@@ -16,4 +16,22 @@ exports.action = (req,res)=>{
         break
         default: res.sendStatus(404)
     }
+}
+
+// login request:
+
+exports.login = (req,res)=>{
+    //code here
+}
+
+// signup request:
+
+exports.signup = (req,res)=>{
+    //code here
+}
+
+// logout request:
+
+exports.logout = (req,res)=>{
+    //code here
 }

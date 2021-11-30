@@ -21,3 +21,21 @@ exports.part = (req,res)=>{
 exports.modify = (req,res)=>{
     res.render('courses/modify')
 }
+
+// create new course requst:
+
+exports.create = (req,res)=>{
+    // code here
+}
+
+// update exist course requst:
+
+exports.update = (req,res)=>{
+    // code here
+}
+
+// delete exist course requst:
+
+exports.delete = (req,res)=>{
+    // code here
+}
