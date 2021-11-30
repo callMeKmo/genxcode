@@ -34,4 +34,10 @@ date 11/26/2021
         content: set all data models (schemas) and relations and routes and changes on frontEnd files and setup middlewares
 
         notes: todo (next-setup) => setup controllers and finish authentcation and authorization
+    
+date 11/30/2021
+
+    report by: Mostafa shrief (update 1.1.0)
+
+        content: sync all controllers with routes and add library for webApp
 
