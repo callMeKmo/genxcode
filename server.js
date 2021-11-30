@@ -50,6 +50,7 @@ app.use(helmet())
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
+app.use(cookieParser())
 
 // database set ( NoSQL mongoose)
 

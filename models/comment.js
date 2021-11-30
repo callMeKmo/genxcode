@@ -32,4 +32,4 @@ const newSchema = new mongoose.Schema({
 })
 // export the module
 
-export default model('Comment', newSchema)
+module.exports = mongoose.model('Comment', newSchema)

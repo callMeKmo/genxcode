@@ -13,10 +13,6 @@ const newSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    from: {
-        type: String,
-        required: true
-    },
     createdAt: {
         type: Date,
         default: Date.now()
@@ -24,4 +20,4 @@ const newSchema = new mongoose.Schema({
 })
 // export the module
 
-export default model('Log', newSchema)
+module.exports = mongoose.model('Log', newSchema)

@@ -41,4 +41,4 @@ const newSchema = new mongoose.Schema({
 })
 // export the module
 
-export default model('User', newSchema)
+module.exports = mongoose.model('User', newSchema)
