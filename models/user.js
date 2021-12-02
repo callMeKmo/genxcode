@@ -37,6 +37,11 @@ const newSchema = new mongoose.Schema({
     },
     interest: {
         type: Array,
+    },
+    ban: {
+        type: Boolean,
+        required: true,
+        default: false
     }
 })
 // export the module
