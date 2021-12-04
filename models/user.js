@@ -13,21 +13,19 @@ const newSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     age: {
         type: Number,
         required: true
     },
     basekey: {
         type: String,
-        required: true
-    },
-    recoveryEmail: {
-        type: String,
-        required: true
     },
     passkey: {
         type: String,
-        required: true,
         default: null
     },
     type: {
@@ -42,6 +40,11 @@ const newSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
         default: false
+    },
+    verfied: {
+        type: Boolean,
+        required: true,
+        default: false 
     }
 })
 // export the module

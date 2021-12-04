@@ -41,3 +41,8 @@ date 11/30/2021
 
         content: sync all controllers with routes and add library for webApp
 
+date 12/4/2021
+
+    report by Mostafa shrief (update 1.1.1)
+
+        content: completed authentcation functions set

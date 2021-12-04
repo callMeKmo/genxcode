@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/stylesheets/auth/signup.css">
 </head>
 
-<form id="authForm" action="">
+<form id="authForm" action="/o/signup" method="post">
     <h2 class="textDark welcome row" style="padding-bottom: 0px;">Sign up</h2>
     <p class="textDark note" style="text-align: center;text-decoration: none;color: #B3B3B3;padding-bottom: 74px;font-size: 16px;">To discover an unlimited world of<br>online learning features.</p>
     <div class="row">
@@ -18,7 +18,11 @@
     </div>
     <div class="row" style="margin-top: 50px;">
         <h3 class="textDark" style="font-weight: bold;font-size: 16px;">Confirm password</h3>
-        <input class="customAutoInput bgDark2 textDark" type="password" name="conPassword" id="conPassword" placeholder="Confirm your password">
+        <input class="customAutoInput bgDark2 textDark" type="password" name="confirmPassword" id="conPassword" placeholder="Confirm your password">
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <h3 class="textDark" style="font-weight: bold;font-size: 16px;">Age</h3>
+        <input class="customAutoInput bgDark2 textDark" type="number" name="age" id="age" placeholder="0">
     </div>
     <div class="row" style="padding: 74px 0;">
         <button class="textDark bgDark2 row">Signup</button>

@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/auth/login.css">
+</head>
+
+<form id="authForm" action="/o/r/v/<%= key %>/reset" method="post">
+    <h2 class="textDark welcome row">Password reset</h2>
+    <div class="row" style="margin-top: 50px;">
+        <h3 class="textDark" style="font-weight: bold;font-size: 16px;">Password</h3>
+        <input class="customAutoInput bgDark2 navDark" type="password" name="password" id="password" placeholder="Enter your new password">
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <h3 class="textDark" style="font-weight: bold;font-size: 16px;">Confirm password</h3>
+        <input class="customAutoInput bgDark2 textDark" type="password" name="confirmPassword" id="conPassword" placeholder="Confirm your password">
+    </div>
+    <div class="row" style="padding: 74px 0;">
+        <button class="textDark bgDark2 row">submit</button>
+    </div>
+</form>
