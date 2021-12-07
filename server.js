@@ -26,6 +26,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server)
 module.exports = io
+const middlewares = require('./middlewares/getPartials')
 
 // web routes:
 
@@ -63,6 +64,8 @@ db.on('error', error => console.error('Database running: Failed, \n Error: '+err
 db.once('open', () => console.log('Database running: Success.'))
 
 // webApp routing:
+
+app.use(middlewares.username,middlewares.key,middlewares.notification)
 
 app.use('/',mainRoute)
 app.use('/a',adminRoute)

@@ -50,8 +50,9 @@ exports.login = async (req,res)=>{
         bcrypt.compare(req.body.password, user[0].password, async(err, result)=>{
             if (err) return res.cookie('error','err-1013'),res.redirect('/o/login')
             if (result) {
-                user[0].save()
                 var key = Key.generate(32)
+                user[0].passkey = key
+                await user[0].save()
                 res.cookie('key',`${key}`,{maxAge: 10*60*1000})
                 res.redirect('/')
             } else return res.cookie('error','err-1020'),res.redirect('/o/login')

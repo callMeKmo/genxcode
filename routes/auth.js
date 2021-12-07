@@ -1,27 +1,28 @@
 // modules:
 
-const { request, response } = require('express')
 const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/auth')
-
+const middlewares = require('../middlewares/checkAuth')
 // auth get requests:
 
 router.get('/:action', controller.action)
 
 router.get('/v/:key', controller.verify)
 
-router.get('/r/v/:key', controller.resetAction)
+router.get('/r/v/:key', middlewares.noAuth, controller.resetAction)
+
+router.get('/t/v/re', middlewares.reAuth)
 
 //auth post requests:
 
-router.post('/login', controller.login)
+router.post('/login', middlewares.noAuth, controller.login)
 
-router.post('/recovery', controller.recovery)
+router.post('/recovery', middlewares.noAuth, controller.recovery)
 
-router.post('/r/v/:key/reset', controller.reset)
+router.post('/r/v/:key/reset', middlewares.noAuth, controller.reset)
 
-router.post('/signup', controller.signup)
+router.post('/signup', middlewares.noAuth, controller.signup)
 
 router.delete('/logout',controller.logout)
 
