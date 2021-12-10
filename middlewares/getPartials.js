@@ -40,8 +40,10 @@ exports.key = async(req,res,next)=>{
             await user.save()
             res.locals.dna = dna
             res.clearCookie('key')
-            console.log("dna sent to " + req.originalUrl);
         }
+    }
+    if (req.body.usr){
+        console.log('yay');
     }
     next()
 }

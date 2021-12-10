@@ -50,7 +50,7 @@ exports.reAuth = async (req,res)=>{
     const user = await User.findOne({email: req.query.email,basekey: req.query.dna,username: req.query.username}).exec()
     var kee = Key.generate(56)
     user.passkey = kee
-    res.cookie('key',`${kee}`)
+    res.cookie('key',`${kee}`,{maxAge: 10*60*1000})
     res.clearCookie('checkFirsto')
     console.log('launched');
     user.basekey = null

@@ -4,7 +4,7 @@ const User = require('../models/user')
 const Log = require('../models/log')
 const nodemailer = require('nodemailer')
 const bcrypt = require('bcrypt')
-const Key = require('../keygen')
+const jwt = require('jsonwebtoken')
 
 // get auth action requst:
 
@@ -50,10 +50,13 @@ exports.login = async (req,res)=>{
         bcrypt.compare(req.body.password, user[0].password, async(err, result)=>{
             if (err) return res.cookie('error','err-1013'),res.redirect('/o/login')
             if (result) {
+                var encryptedEmail = await bcrypt.hash(user[0].email, 10)
+                const token = genreateAccessToken({g: encryptedEmail,k: user[0].basekey})
+                const refreshToken = jwt.sign({username: user[0].username}, process.env.REFRESH_TOKEN_SECRET)
                 var key = Key.generate(32)
                 user[0].passkey = key
                 await user[0].save()
-                res.cookie('key',`${key}`,{maxAge: 10*60*1000})
+                res.cookie('key',`${key}`,{maxAge: 5*60*1000,secured: process.env.NODE_ENV !== "development"})
                 res.redirect('/')
             } else return res.cookie('error','err-1020'),res.redirect('/o/login')
             if (user[0].isAdmin == true){
