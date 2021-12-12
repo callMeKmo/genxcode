@@ -46,3 +46,11 @@ date 12/4/2021
     report by Mostafa shrief (update 1.1.1)
 
         content: completed authentcation functions set
+
+date 12/12/2021
+
+    report by Mostafa shrief (update1.2.7)
+
+        content: authorization set added mail and recovery and reset password for authentcation added setup script completed middlewares and setup it for routes,created ajax requests for logs reports users orders
+
+        notes: waiting upon front end complete to finish courses books news, languages themes online pay emthods wont be available on current version

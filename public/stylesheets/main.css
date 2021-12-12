@@ -74,6 +74,11 @@
     padding: 0 5%;
 }
 
+#app{
+  grid-row: 2/-1;
+  grid-column: 1/-1;
+}
+
 #container::-webkit-scrollbar{
     display: none;
 }

@@ -13,7 +13,7 @@ exports.notification = (req,res,next) => {
         const note = req.cookies.note
         if (note != null) {
             res.locals.note = note
-            //res.clearCookie('note')
+            res.clearCookie('note')
         } else {
             return res.cookie('note','note is empty'),res.redirect('/')
         }

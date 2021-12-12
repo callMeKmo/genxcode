@@ -2,18 +2,19 @@ const fs = require('fs')
 const key = require('./keygen')
 const { exec } = require("child_process");
 
-exec("npm run install", (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`)
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`)
-        return;
-    }
-    console.log(`stdout: ${stdout}`)
-})
-
+if (!fs.existsSync('./node_modules')) {
+    exec("npm run install", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`)
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`)
+            return;
+        }
+        console.log(`stdout: ${stdout}`)
+    })
+}
 content = 
 `DATABASE_URL = mongodb://localhost/${key.generate(16)}
 ACCESS_TOKEN_SECRET = ${key.generate(128)}
