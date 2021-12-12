@@ -12,8 +12,6 @@ router.get('/v/:key', controller.verify)
 
 router.get('/r/v/:key', middlewares.noAuth, controller.resetAction)
 
-router.get('/t/v/re', middlewares.reAuth)
-
 //auth post requests:
 
 router.post('/login', middlewares.noAuth, controller.login)
@@ -24,7 +22,7 @@ router.post('/r/v/:key/reset', middlewares.noAuth, controller.reset)
 
 router.post('/signup', middlewares.noAuth, controller.signup)
 
-router.delete('/logout',controller.logout)
+router.delete('/logout', middlewares.auth, controller.logout)
 
 //export auth router:
 

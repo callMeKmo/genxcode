@@ -13,13 +13,6 @@
         <script defer src="/scripts/plugins/theme.js"></script>
         <title>GENX</title>
     </head>
-    <% if (locals.username && locals.email && locals.dna) { %>
-        <div style="display: none;">
-            <input type="text" id="usr" value="<%= username %>">
-            <input type="text" id="ema" value="<%= email %>">
-            <input type="text" id="dn" value="<%= dna %>">
-        </div>
-    <% } %>
     <body theme="dark">
         <div id="container" class="bgDark1">
             <%- include('../plugins/navbar.ejs') %>
