@@ -15,7 +15,7 @@ exports.notification = (req,res,next) => {
             res.locals.note = note
             res.clearCookie('note')
         } else {
-            return res.cookie('note','note is empty'),res.redirect('/')
+            return res.cookie('note','err-1200'),res.redirect('/')
         }
     }
     next()
@@ -27,10 +27,12 @@ exports.tok = async(req,res,next)=>{
     if (req.cookies.SR_UT) {
         const key = req.cookies.SR_UT
         if (key != null){
+
             //verify SR_UT
+            
             jwt.verify(key,process.env.REFRESH_TOKEN_SECRET,async(err,data)=>{
                 if (err){
-                    return res.cookie('note','key not verified'),res.redirect('/')
+                    return res.cookie('note','err-1000'),res.redirect('/')
                 } else {
                     const key = await Key.findOne({dakey: data.d}).exec()
                     const decipher = crypto.createDecipheriv(process.env.ALGORITHM, key.crkey, key.ivkey)
@@ -39,7 +41,9 @@ exports.tok = async(req,res,next)=>{
                     var obj = Buffer.from(decryptedData, 'hex').toString('utf-8').split(`${process.env.STRING_CMD}+`)[1]
                     const user = await User.findOne({username:obj,passkey:data.k}).exec()
                     if (user){
+                        
                         //create new SR_UT
+                        
                         res.locals.username = user.username
                         await key.remove()
                         res.clearCookie('SR_UT')
@@ -60,7 +64,9 @@ exports.tok = async(req,res,next)=>{
                         await newKey.save()
                         const token = genreateAccessToken({o: `${encryptedData}`,k: user.passkey,d: dakey},'REFRESH_TOKEN_SECRET',24*60)
                         res.cookie('SR_UT',`${token}`,{maxAge: 24*60*60*1000,secured: process.env.NODE_ENV !== "development"})
+                        
                         //create new S_UT
+                        
                         var crokey = gen.generate(32)
                         var ivokey = gen.generate(16)
                         var daokey = gen.generate(16)
@@ -80,17 +86,19 @@ exports.tok = async(req,res,next)=>{
                         req.key = tokeno
                         next()
                     } else {
-                        return res.cookie('note','user not found'),res.redirect('/')
+                        return res.cookie('note','err-1001'),res.redirect('/')
                     }
                 }
             })
         } else {
-            return res.cookie('note','SR_UT is empty'),res.redirect('/')
+            return res.cookie('note','err-1201'),res.redirect('/')
         }
     } else {
         next()
     }
 }
+
+//generate new jwt token
 
 function genreateAccessToken(json,env,dur) {
     if (dur){

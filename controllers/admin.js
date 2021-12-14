@@ -5,12 +5,6 @@ const Log = require('../models/log')
 const Report = require('../models/report')
 const User = require('../models/user')
 
-// get adminpanel requst:
-
-exports.adminpanel = (req,res)=>{
-    res.render('admin/adminpanel')
-}
-
 // get orders requst:
 
 exports.orders = (req,res)=>{
@@ -60,7 +54,7 @@ exports.daData = async(req,res)=>{
             dataLoader(User,res,req.params.date)
         break
         default:
-            res.cookie('note',`${req.params.type} is not a data type`)
+            res.cookie('note',`err-2000`)
             res.redirect('/')
     }
 }
@@ -82,19 +76,47 @@ exports.daDoc = async(req,res)=>{
             res.json(log)
         break
         default:
-            res.cookie('note',`${req.params.type} is not a data type`)
+            res.cookie('note',`err-2001`)
             res.redirect('/')
     }
 }
 
-exports.usersChange = (req,res)=>{
-    // code here
+exports.usersChange = async(req,res)=>{
+    const user = await User.findById(req.params.id).exec()
+    if (user){
+        user.type = req.body.type
+        await user.save()
+        const log = new Log({
+            card:'admin added',
+            action:`${user.email} have become an admin! date: ${Date.now()}`
+        })
+        await log.save()
+        res.redirect('/a/users')
+    } else {
+        res.cookie('note','err-2100')
+        res.redirect('/a/analysis')
+    }
 }
 
 // remove user requst:
 
-exports.usersRemove = (req,res)=>{
-    // code here
+exports.usersRemove = async(req,res)=>{
+    const user = await User.findById(req.params.id).exec()
+    if (user){
+        if (req.userInfo === 'owner' || req.userInfo === 'developer'){
+            await user.remove()
+        } else {
+            if (user.type !== "admin"){
+                await user.remove()
+            } else {
+                res.cookie('note','only server owner have access for this')
+                res.redirect('/a/analysis')
+            }
+        }
+    } else {
+        res.cookie('note','err-2102')
+        res.redirect('/a/analysis')
+    }
 }
 
 //data loader

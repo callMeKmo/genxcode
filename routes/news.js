@@ -11,9 +11,9 @@ router.get('/all', controller.all)
 
 router.get('/preview', controller.preview)
 
-router.get('/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
+router.get('/v/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
 
-// books post requests
+// news post requests
 
 router.post('/v/add/:id', middlewares.auth, middlewares.admin, controller.create)
 

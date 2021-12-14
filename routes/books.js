@@ -13,7 +13,7 @@ router.get('/:book', controller.preview)
 
 router.get('/:id/:chapter', middlewares.auth, controller.chapter)
 
-router.get('/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
+router.get('/v/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
 
 // books post requests
 

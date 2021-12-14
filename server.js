@@ -53,7 +53,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 app.use(cookieParser())
 
-// database set ( NoSQL mongoose)
+// database set ( NoSQL mongoose):
 
 mongoose.connect(process.env.DATABASE_URL, { 
     useNewUrlParser: true,
@@ -63,7 +63,7 @@ const db = mongoose.connection
 db.on('error', error => console.error('Database running: Failed, \n Error: '+error))
 db.once('open', () => console.log('Database running: Success.'))
 
-// webApp routing:
+// webApp routing and middlewares:
 
 app.use(middlewares.tok,middlewares.notification)
 

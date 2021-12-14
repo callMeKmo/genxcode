@@ -1,3 +1,6 @@
+
+// genterate random string keys
+
 exports.generate = (length) => {
     var result = '',characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     var charactersLength = characters.length;

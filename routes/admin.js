@@ -25,7 +25,7 @@ router.get('/inspect/:type/:id', controller.daDoc)
 
 // admin post requests:
 
-router.post('/users/:id', controller.usersChange)
+router.post('/users/:id', middlewares.owner, controller.usersChange)
 
 router.delete('/users/:id', controller.usersRemove)
 

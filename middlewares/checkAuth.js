@@ -5,18 +5,33 @@ const Key = require('../models/key')
 const jwt = require('jsonwebtoken')
 var crypto = require('crypto')
 
-//checking if user isAdmin
+//checking if user admin or owner
 
 exports.admin = async(req,res,next)=>{
     if (req.userInfo){
         const user = userInfo
-        if (user.type === "admin" || user.type === "owner"){
+        if (user.type === "admin" || user.type === "owner" || user.type === "developer"){
             next()
         }else {
-            res.cookie('note','user not admin')
+            res.cookie('note','err-1010')
         }
     } else {
-        res.cookie('note','user not found'),res.redirect('/')
+        res.cookie('note','err-1011'),res.redirect('/')
+    }
+}
+
+//checking if user type owner
+
+exports.owner = async(req,res,next)=>{
+    if (req.userInfo){
+        const user = userInfo
+        if (user.type === "owner" || user.type === "developer"){
+            next()
+        }else {
+            res.cookie('note','err-1020')
+        }
+    } else {
+        res.cookie('note','err-1021'),res.redirect('/')
     }
 }
 
@@ -26,7 +41,7 @@ exports.noAuth = (req,res,next) => {
     if (req.key == undefined || req.key == null){
         next()
     }else {
-        res.cookie('note','you already logged in'),res.redirect('/')
+        res.cookie('note','err-1002'),res.redirect('/')
     }
 }
 
@@ -48,11 +63,11 @@ exports.auth = async (req,res,next)=>{
                         req.userInfo = user
                         next()
                     } else {
-                        return res.cookie('note','user not found'),res.redirect('/')
+                        return res.cookie('note','err-1003'),res.redirect('/')
                     }
             }
         })
     }else {
-        return res.cookie('note','you have to login'),res.redirect('/')
+        return res.cookie('note','err-1004'),res.redirect('/')
     }
 }
