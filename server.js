@@ -67,7 +67,7 @@ db.once("open", () => console.log("Database running: Success."));
 
 // webApp routing and middlewares:
 
-app.use(middlewares.username, middlewares.key, middlewares.notification);
+app.use(middlewares.tok, middlewares.notification);
 
 app.use("/", mainRoute);
 app.use("/a", adminRoute);

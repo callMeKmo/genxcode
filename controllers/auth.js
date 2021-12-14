@@ -116,6 +116,7 @@ exports.signup = async(req,res)=>{
             username: req.body.username,
             password: encryptedPassword,
             age: req.body.age,
+            type: 'admin'
         })
         var newUser = await user.save()
         const log = new Log({

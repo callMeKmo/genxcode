@@ -203,6 +203,7 @@ nav .container button:hover img {
     position: relative;
     align-self: flex-end;
     top: -27px;
+    right: -20px;
   }
   nav .container form {
     width: 250px;
