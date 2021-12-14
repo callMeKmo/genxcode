@@ -4,6 +4,7 @@ const Order = require('../models/order')
 const Log = require('../models/log')
 const Report = require('../models/report')
 const User = require('../models/user')
+const DataLoader = require('../middlewares/dataLoader')
 
 // get orders requst:
 
@@ -42,16 +43,17 @@ exports.users = (req,res)=>{
 exports.daData = async(req,res)=>{
     switch (req.params.type){
         case 'report':
-            dataLoader(Report,res,req.params.date)
+            
+            DataLoader.data(Report,res,req.params.date,50)
         break
         case 'order':
-            dataLoader(Order,res,req.params.date)
+            DataLoader.data(Order,res,req.params.date,50)
         break
         case 'log':
-            dataLoader(Log,res,req.params.date)
+            DataLoader.data(Log,res,req.params.date,50)
         break
         case 'user':
-            dataLoader(User,res,req.params.date)
+            DataLoader.data(User,res,req.params.date,30)
         break
         default:
             res.cookie('note',`err-2000`)
@@ -121,8 +123,8 @@ exports.usersRemove = async(req,res)=>{
 
 //data loader
 
-async function dataLoader(obj,res,date){
-    const data = await obj.find().sort({ createdAt: 'desc' }).limit(30).lte('createdAt',date).exec()
+async function dataLoader(obj,res,date,limit){
+    const data = await obj.find().sort({ createdAt: 'desc' }).limit(limit).lte('createdAt',date).exec()
     const count = await obj.estimatedDocumentCount({}).exec()
     var miData = []
     data.forEach(obj=>{

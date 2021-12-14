@@ -37,6 +37,10 @@ const newSchema = new mongoose.Schema({
     duration:{
         type: Number,
         required: true
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
 })
 // export the module
