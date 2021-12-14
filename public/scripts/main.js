@@ -10,4 +10,9 @@ const resize = ()=>{
 win.onresize = e=>{
     resize()
 }
+if (document.getElementById('customNote')){
+    document.getElementById('closee').addEventListener('click',e=>{
+        document.getElementById('customNote').style.display = 'none'
+    })
+}
 resize()

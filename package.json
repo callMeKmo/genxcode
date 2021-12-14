@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "host": "nodemon server.js",
-    "deploy": "node deploy.js"
+    "setup": "node setup.js",
+    "install": "npm install"
   },
   "keywords": [],
   "author": "KMO",
@@ -28,6 +29,7 @@
     "mongoose": "^5.13.13",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
+    "npm": "^8.3.0",
     "socket.io": "^4.4.0",
     "stripe": "^8.191.0"
   }

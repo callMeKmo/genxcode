@@ -70,7 +70,16 @@ body {
   flex-direction: column;
 }
 
+<<<<<<< HEAD
 /* ::-webkit-scrollbar{
+=======
+#app{
+  grid-row: 2/-1;
+  grid-column: 1/-1;
+}
+
+#container::-webkit-scrollbar{
+>>>>>>> 9329a8956bc73718b6381602263a5046a3ccd6f2
     display: none;
 }  */
 

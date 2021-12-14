@@ -1,0 +1,8 @@
+<% if (locals.note) { %>
+    <div id="customNote" style="z-index: 10000;grid-column: 1/-1;grid-row: 2/-1;display: grid;place-items: center;width: 100%;height: 100%;">
+        <div style="display: grid;width: 70%;height: 70%;background-color: #f2f2f2;place-items: center;border-radius: 8px;grid-template-rows: min-content;">
+            <button id="closee" style="place-self: start end; padding: 10px;border: none;outline: none;cursor: pointer;background-color: transparent;">close</button>
+            <h2 class="daNote" style="font-size: 36px;"><%= note %></h2>
+        </div>
+    </div>
+<% } %>

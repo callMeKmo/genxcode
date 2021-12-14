@@ -1,59 +1,73 @@
 // models
 
 const User = require('../models/user')
-const Key = require('../keygen')
+const Key = require('../models/key')
+const jwt = require('jsonwebtoken')
+var crypto = require('crypto')
 
-//checking if user isAdmin
+//checking if user admin or owner
 
 exports.admin = async(req,res,next)=>{
-    if (req.key){
-        const key = req.key
-        if ( key == null) return res.cookie('error','err-0000'),res.redirect('/')
-        try {
-            const userData = await User.find({passkey: key}).exec()
-            if ( userData[0].type !== "admin" || userData[0].type !== "owner") return res.cookie('error','err-0010'),res.redirect('/')
-            next()   
-        } catch{
-            res.cookie('error','err-0020'),res.redirect('/')
+    if (req.userInfo){
+        const user = userInfo
+        if (user.type === "admin" || user.type === "owner" || user.type === "developer"){
+            next()
+        }else {
+            res.cookie('note','err-1010')
         }
+    } else {
+        res.cookie('note','err-1011'),res.redirect('/')
     }
 }
 
-// check that there is no auth
+//checking if user type owner
+
+exports.owner = async(req,res,next)=>{
+    if (req.userInfo){
+        const user = userInfo
+        if (user.type === "owner" || user.type === "developer"){
+            next()
+        }else {
+            res.cookie('note','err-1020')
+        }
+    } else {
+        res.cookie('note','err-1021'),res.redirect('/')
+    }
+}
+
+// check that there is no token
 
 exports.noAuth = (req,res,next) => {
     if (req.key == undefined || req.key == null){
         next()
     }else {
-        res.cookie('error','err-0100'),res.redirect('/')
+        res.cookie('note','err-1002'),res.redirect('/')
     }
 }
 
-// check that there is passkey
+// check that there is token
 
 exports.auth = async (req,res,next)=>{
     if (req.key){
-        const key = req.key
-        if ( key == null) return res.cookie('error','err-0200'),res.redirect('/')
-        const user = await User.findOne({passkey: key}).exec()
-        if (user){
-            next()
-        } else {
-            return res.cookie('error','err-0200'),res.redirect('/')
-        }
+        jwt.verify(req.key,process.env.ACCESS_TOKEN_SECRET,async(err,data)=>{
+            if (err) {
+                res.redirect(`/${req.originalUrl}`)
+            } else {
+                const key = await Key.findOne({dakey: data.d}).exec()
+                const decipher = crypto.createDecipheriv(process.env.ALGORITHM, key.crkey, key.ivkey)
+                    let decryptedData = decipher.update(data.o, "hex", "utf-8")
+                    decryptedData += decipher.final("utf8")
+                    var obj = Buffer.from(decryptedData, 'hex').toString('utf-8').split(`${process.env.STRING_CMD}+`)[1]
+                    const user = await User.findOne({email:obj,basekey:data.k}).exec()
+                    if (user){
+                        req.userInfo = user
+                        next()
+                    } else {
+                        return res.cookie('note','err-1003'),res.redirect('/')
+                    }
+            }
+        })
     }else {
-        return res.cookie('error','err-0200'),res.redirect('/')
+        return res.cookie('note','err-1004'),res.redirect('/')
     }
-}
-
-exports.reAuth = async (req,res)=>{
-    const user = await User.findOne({email: req.query.email,basekey: req.query.dna,username: req.query.username}).exec()
-    var kee = Key.generate(56)
-    user.passkey = kee
-    res.cookie('key',`${kee}`,{maxAge: 10*60*1000})
-    res.clearCookie('checkFirsto')
-    console.log('launched');
-    user.basekey = null
-    await user.save()
-    res.redirect(req.query.origin)
 }

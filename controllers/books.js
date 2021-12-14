@@ -1,6 +1,10 @@
+//modules
+
+const Book = require('../models/book')
+
 // get all requst:
 
-exports.all = (req,res)=>{
+exports.all = async (req,res)=>{
     res.render('books/all')
 }
 
