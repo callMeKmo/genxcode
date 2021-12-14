@@ -1,62 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  --webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* scrollbar cascading */
+::-webkit-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+::-moz-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
+}
+::-moz-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 10px;
+}
+::-moz-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+/* --------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  color: white;
+  font-family: var(--mainfont);
+}
+
+/* small screen---------------------- */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*--meduim screen--------------- */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large screen ---------------------*/
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+/* /* start header it will deleted later * */
+body > header {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+  font-size: 60px;
+}
+/* .-. .-. .-. .-. .-. .-. .-. .-. */
+
 /* srart navigation bar */
 nav .container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+nav .container h1 {
+  font-size: 64px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--ff);
+  margin: 10px 0;
+}
+
+nav .container button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+nav .container button:hover img {
+  filter: invert(30%);
+}
+
+/* small screen---------------------- */
+@media (max-width: 767px) {
+  nav .container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
   }
-  nav .container h1 {
-    font-size: 64px;
-    font-weight: 600;
-    text-transform: capitalize;
-    color: var(--ff);
+
+  nav .container h1{
+    font-size: 40px;
   }
-  
-  
-  nav .container button {
-    position: absolute;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  
-    transition: 0.2s;
-  }
-  nav .container button:hover img {
-    filter: invert(30%);
-  }
-  
-  
-  /* small screen---------------------- */
-  @media (max-width: 767px) {
-    nav .container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    nav .container button {
-      position: relative;
-      align-self: flex-end;
-          top: -82px;
-    }
-  }
-  
-  /* end navigation bar */
-  
-  /* --------------------------------- */
-  
-  /* start news-box */
-  .content .container .news-box{
-    /* background-color: rgb(100, 100, 100); */
+}
+
+/* end navigation bar */
+
+/* --------------------------------- */
+
+/* start news-box */
+
+.content .container .news-box {
+  /* background-color: rgb(100, 100, 100); */
   border-top: 1px solid var(--ff);
   display: flex;
-  }
-  .content .container .news-box .description{
-    margin-top: 10px;
-    margin-left: 25px;
-    overflow: hidden;
-  }
-  .content .container .news-box .images{ 
+}
+.content .container .news-box .description {
+  margin-top: 10px;
+  margin-left: 25px;
+  overflow: hidden;
+}
+.content .container .news-box .images {
   background-color: #2a2a2c;
   width: 100px;
   min-width: 100px;
@@ -64,19 +151,12 @@ nav .container {
   margin-top: 10px;
   border-radius: 10px;
   margin-bottom: 2px;
-  }
-  
-  /* .content .container .news-box .images img{ 
-  border-radius: 10px;
-  height: 100%;
-  width: 100%;
-  } */
-  .content .container .news-box h2{ 
+}
+
+.content .container .news-box h2 {
   color: var(--ff);
-  
-  }
-  .content .container .news-box p{ 
+}
+.content .container .news-box p {
   margin-top: 10px;
   color: var(--B3);
-  }
-  
+}

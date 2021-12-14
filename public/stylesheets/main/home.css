@@ -1,24 +1,96 @@
-/* home style here */
-
-.discover .container {
-  width: 100%;
-  display: grid;
-  grid-auto-flow: row;
-  place-items: center;
-  height: 100%;
+/* scrollbar cascading */
+::-webkit-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
 }
-.sect{
-  display: grid;
-  width: 100%;
-  height: 100%;
-  place-items: center;
+::-webkit-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+::-moz-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
+}
+::-moz-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 10px;
+}
+::-moz-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small screen---------------------- */
+@media (min-width: 768px) {
+  .container {
+    width: 98%;
+  }
+}
+
+/* meduim screen---------------------- */
+@media (min-width: 992px) {
+  .container {
+    width: 98%;
+  }
+}
+
+/* large screen ---------------------*/
+@media (min-width: 1200px) {
+  .container {
+    width: 98%;
+  }
+}
+/* /* start header it will deleted later * */
+body > header {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+  font-size: 60px;
+}
+/* .-. .-. .-. .-. .-. .-. .-. .-. */
+
+/* start .discover */
+.discover {
+}
+.discover .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin-top: -100px;
+  padding-top: 100px;
+  justify-content: space-evenly;
 }
 .discover .container h1 {
   font-size: 82px;
   font-weight: bold;
   color: var(--ff);
   width: 70%;
-  margin: 50px 0 0 0;
+  margin: 0;
   text-align: center;
   font-family: var(--mainfont);
 }
@@ -59,9 +131,6 @@
 .discover .container .start button img:hover {
   filter: var(--filter);
 }
-#top img:hover {
-  filter: var(--filter);
-}
 
 /* meduim screen---------------------- */
 @media (max-width: 991px) {
@@ -76,6 +145,9 @@
     width: 100%;
     font-size: 45px;
   }
+  .discover .container .start {
+    margin-top: 40px;
+  }
   .discover .container h1 img {
     width: 50px;
     margin: 0;
@@ -89,16 +161,19 @@
 }
 /* ----------------------------- */
 /* start section2 */
+.section2 {
+}
 .section2 .container {
-  display: grid;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  padding-top: 150px;
   justify-content: space-between;
-  grid-auto-flow: column;
-  width: 100%;
-  height: 100%;
-  place-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .section2 .container .left {
-  width: 100%;
+  width: 50%;
 }
 .section2 .left h2 {
   text-align: center;
@@ -114,10 +189,10 @@
 }
 .section2 .left .clickHere a {
   color: var(--B3);
+  transition: 0.3s;
 }
 .section2 .left .clickHere a:hover {
   filter: var(--filter);
-
 }
 .section2 .left .join {
   text-align: center;
@@ -129,17 +204,18 @@
 .section2 .left .join a img {
   height: 40px;
   transform: translatey(25%);
+  transition: 0.3s;
 }
 .section2 .left .join a img:hover {
   /* filter: var(--filter); */
-    background-color: var(--ff);
-    border-radius: 10px;
+  background-color: var(--ff);
+  border-radius: 10px;
 }
 .section2 .right {
-  width: 100%;
+  width: 45%;
 }
 .section2 .right img {
-  width: 100%;
+  width: 95%;
 }
 /* meduim screen---------------------- */
 @media (max-width: 991px) {
@@ -164,10 +240,14 @@
 
 /* ======================= */
 /* start .section3 */
-
+#about {
+  height: fit-content !important;
+}
 .section3 .container {
+  min-height: calc(100vh - 100px) !important;
+  align-items: center;
   display: flex;
-  margin-top: 200px;
+  margin-top: 150px;
   justify-content: space-between;
   flex-direction: row;
 }
@@ -188,6 +268,7 @@
 }
 .section3 .right .clickHere a {
   color: var(--B3);
+  transition: 0.3s;
 }
 .section3 .right .clickHere a:hover {
   filter: var(--filter);
@@ -222,9 +303,9 @@
 /* ------------------------- */
 /* start about us */
 .About-Us .container {
+  min-height: calc(100vh - 100px);
+  align-items: center;
   display: flex;
-  margin-top: 160px;
-  align-items: flex-start;
 }
 .About-Us .content {
   margin-left: 40px;
@@ -250,32 +331,19 @@
   }
   .About-Us .container {
     flex-direction: column;
+    margin-top: 120px;
   }
   .About-Us .content {
-     margin-left: 0
+    margin-left: 0;
   }
 }
-
+.sect{
+  height: unset !important;
+}
 /* small screen---------------------- */
 @media (max-width: 767px) {
   .About-Us img {
     width: 60%;
-}
+  }
 }
 /* ------------------------- */
-/* stat footer */
-footer .container{
-  display: flex;
-      justify-content: space-between;
-    align-items: center;
-    margin-top: 150px;
-    color: var(--B3);
-}
-footer img{
- transform: rotate(180deg);
- position: relative;
- top: -20px;
-}
-footer img:hover{
-  filter: var(--filter);
-}

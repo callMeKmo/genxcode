@@ -1,98 +1,93 @@
 /* light */
 
-.bgLight1{
-    background-color: #F3F3F3;
+.bgLight1 {
+  background-color: #f3f3f3;
 }
-.bgLight2{
-    background-color: #c3c3c3;
+.bgLight2 {
+  background-color: #c3c3c3;
 }
-.bgLight2.hover:hover{
-    background-color: #B9B9B9;
-    color: #232323;
+.bgLight2.hover:hover {
+  background-color: #b9b9b9;
+  color: #232323;
 }
-.hoverLight{
-    color: #c3c3c3;
+.hoverLight {
+  color: #c3c3c3;
 }
-.textLight{
-    color: #232323;
+.textLight {
+  color: #232323;
 }
-.navLight{
-    color: #B3B3B3;
-    font-weight: 500;
+.navLight {
+  color: #b3b3b3;
+  font-weight: 500;
 }
-.navLight:hover{
-    color: #232323;
-    font-weight: 500;
+.navLight:hover {
+  color: #232323;
+  font-weight: 500;
 }
-.btnLight{
-    background-color: #232323;
+.btnLight {
+  background-color: #232323;
 }
-.inputLight{
-    background-color: #BEBEBE;
+.inputLight {
+  background-color: #bebebe;
 }
-
 /* dark */
+.bgDark1 {
+  background-image: linear-gradient(135deg, #232323, #272727);
+}
 
-.bgDark1{
-    background-image: linear-gradient(135deg,#232323, #272727);;
+.bgDark2 {
+  background-color: #444444;
 }
-.bgDark2{
-    background-color: #444444;
+.bgDark0 {
+  background-color: #121212;
 }
-.bgDark0{
-    background-color: #121212;
+.bgDark1.light:hover {
+  background-color: #f3f3f3;
+  color: #232323;
+  transition: 0.4s;
 }
-.bgDark2.hover:hover{
-    background-color: #F3F3F3;
-    color: #232323;
+.hoverDark {
+  color: #878683;
 }
-.bgDark1.light:hover{
-    background-color: #F3F3F3;
-    color: #232323;
-    transition: 0.4s;
+.textDark {
+  color: #f3f3f3;
+  font-weight: 400;
 }
-.hoverDark{
-    color: #878683;
+.navDark {
+  color: #b3b3b3;
+  font-weight: 400;
 }
-.textDark{
-    color: #F3F3F3;
-    font-weight: 400;
+.navDark:hover {
+  color: #f3f3f3;
+  font-weight: 400;
 }
-.navDark{
-    color: #B3B3B3;
-    font-weight: 400;
+.btnDark {
+  background-color: #f3f3f3;
 }
-.navDark:hover{
-    color: #F3F3F3;
-    font-weight: 400;
-}
-.btnDark{
-    background-color: #F3F3F3;
-}
-.inputDark{
-    background-color: #434343;
+.inputDark {
+  background-color: #434343;
 }
 
 /* standard */
 
-.activeColor{
-    background-color: #03A0FF;
+.activeColor {
+  background-color: #03a0ff;
 }
 
-.activeText{
-    color: #03A0FF;
+.activeText {
+  color: #03a0ff;
 }
 
-.warningColor{
-    color: #FFC107;
+.warningColor {
+  color: #ffc107;
 }
 
-.alertColor{
-    color: #DC3545;
+.alertColor {
+  color: #dc3545;
 }
-.greyText{
-    color: #878683;
+.greyText {
+  color: #878683;
 }
-.activeBtn{
-    color: #F3F3F3;
+.activeBtn {
+  color: #f3f3f3;
 }

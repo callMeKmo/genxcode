@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  --webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* ------scrollbar cascading--------- */
+
+::-webkit-scrollbar {
+  background-color: var(--B3);
+  width: 5px;
+  border-radius: 5px;
+}
+::-moz-scrollbar {
+  background-color: var(--B3);
+  width: 5px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 5px;
+}
+::-moz-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e7e7e7;
+}
+::-moz-scrollbar-thumb:hover {
+  background-color: #e7e7e7;
+}
+/* ==============selection================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style: none;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  color: white;
+  font-family: var(--mainfont);
+  min-height: 100vh;
+}
+
+/* small screen---------------------- */
+@media (min-width: 768px) {
+  .container {
+    width: 98%;
+  }
+}
+
+/* meduim screen---------------------- */
+@media (min-width: 992px) {
+  .container {
+    width: 98%;
+  }
+}
+
+/* large screen ---------------------*/
+@media (min-width: 1200px) {
+  .container {
+    width: 98%;
+  }
+}
+/* /* start header it will deleted later * */
+body > header {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+  font-size: 60px;
+}
+/* srart navigation bar */
+nav .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+nav .container h1 {
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--ff);
+  margin: 20px 0 20px 150px;
+}
+
+nav .container form {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 8px;
+  width: 632px;
+  height: 36px;
+}
+nav .container input[type="search"] {
+  background-color: #2d2d30;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: none;
+  color: var(--B3);
+  width: calc(632px - 50px);
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 23px;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  caret-color: var(--B3);
+}
+nav .container input[type="search"]::placeholder {
+  font-family: serif;
+  color: var(--B3);
+}
+nav .container input[type="search"]:focus {
+  outline: none;
+}
+nav .container input[type="submit"] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #2d2d30;
+  background-image: url("/media/icons/Search icon 17.49x17.49.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 50px;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.2s;
+}
+nav .container input[type="submit"]:hover {
+  filter: invert(100%);
+}
+nav .container button {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+nav .container button:hover img {
+  filter: invert(30%);
+}
+
+/* large screen ---------------------*/
+@media (max-width: 1199px) {
+  nav .container form {
+    width: 450px;
+  }
+  nav .container input[type="search"] {
+    width: 400px;
+  }
+}
+/* meduim screen---------------------- */
+@media (max-width: 991px) {
+  nav .container form {
+    width: 300px;
+  }
+  nav .container input[type="search"] {
+    width: 250px;
+  }
+}
+/* small screen---------------------- */
+@media (max-width: 810px) {
+  nav .container {
+    display: flex;
+    flex-direction: column;
+  }
+  nav .container h1 {
+    font-size: 40px;
+    margin: 20px auto 35px;
+  }
+  nav .container form {
+    align-self: flex-start;
+    margin-top: -20px;
+    margin-left: -1%;
+  }
+  nav .container button {
+    position: relative;
+    align-self: flex-end;
+    top: -27px;
+  }
+  nav .container form {
+    width: 250px;
+  }
+  nav .container input[type="search"] {
+    width: 200px;
+  }
+}
+
+/* -------page---------- */
+.page .container {
+  display: flex;
+  column-gap: 20px;
+}
+
+/* -------------main-side-bar--------------- */
+.page .main-side-bar > ul {
+  position: relative;
+  width: 200px;
+}
+.page .main-side-bar > ul::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: calc(100vh - (150px + 120px));
+  right: 0;
+  top: 0;
+  background-color: var(--B3);
+  border-radius: 5px;
+}
+.page .main-side-bar ul a {
+  color: #d3af37;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: block;
+  width: fit-content;
+  border-radius: 38.4px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+.page .main-side-bar ul a.report {
+  background-color: #d3af37;
+  color: #181818;
+}
+.page .main-side-bar ul a:hover {
+  background-color: #d3af37;
+  color: #181818;
+}
+/* ===============[End]=============== */
+/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
+.page .container {
+  position: relative;
+}
+.page .container .ico-to-side {
+  position: absolute;
+  width: 50px;
+  padding: 10px;
+  left: 0;
+  top: -115px;
+  transition: 0.5s;
+  display: none;
+}
+.page .container .ico-to-side section {
+  width: 100%;
+  height: 3px;
+  background-color: var(--ff);
+  margin-bottom: 5px;
+}
+.page .container .main-side-bar ul {
+  width: 200px;
+  position: relative;
+  transition: 0.5s;
+  height: calc(100vh - (150px + 120px));
+}
+
+.page .container .ico-to-side:hover + ul {
+  display: block;
+  left: 0;
+}
+@media (max-width: 810px) {
+  .page .container .main-side-bar ul {
+    display: none;
+    left: -100%;
+  }
+  .page .container .ico-to-side {
+    display: block;
+    z-index: 1202;
+  }
+  .page .container {
+    gap: 0;
+  }
+}
+
+/* ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
+.page .log-menu > ul {
+  height: calc(100vh - (150px + 120px));
+  overflow-y: scroll;
+  width: 180px;
+  margin-left: -20px;
+}
+.page .log-menu > ul a {
+  color: var(--B3);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: 18px;
+  transition: .3s;
+}
+.page .log-menu > ul a:hover {
+  color: var(--ff);
+}
+/* --------------content-------------- */
+.page .content {
+  width: 100%;
+}
+.page .content h2 {
+  font-size: 40px;
+  margin-left: 15px;
+  text-transform: capitalize;
+}
+
+.content form .order-data {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px;
+  align-items: center;
+  gap: 40px;
+}
+
+.content form .order-data .order-option {
+  display: flex;
+  flex-direction: column;
+  background-color: #2d2d30;
+  height: 200px;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.content form .order-data .order-option button {
+  background-color: #2d2d30;
+  border: none;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.order-data .order-option button:hover {
+  filter: var(--filter);
+}
+
+.main-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 30px;
+}
+.main-data label {
+  text-transform: capitalize;
+  color: var(--B3);
+}
+
+.main-data input {
+  background-color: #2d2d30;
+  border: none;
+  color: var(--B3);
+  width: 250px;
+  margin-left: 30px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+.main-data input:focus {
+  outline: none;
+}
+@media (max-width: 991px) {
+  .content form .order-data {
+    flex-direction: column;
+  }
+  .content form .order-data .order-option {
+    flex-direction: row;
+    width: 200px;
+    height: fit-content;
+  }
+  .main-data > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+  .main-data input {
+    margin-left: 0;
+  }
+}
+/* {{{{{{{{{{{{{{{{{{{{{ */
+.responsive {
+  display: flex;
+}
+@media (max-width: 810px) {
+  .responsive {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .page .log-menu ul {
+    width: 100%;
+    height: 350px;
+    margin: unset;
+  }
+  .page .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .page .content h2 {
+    margin-top: 20px;
+  }
+  .page .content form {
+    width: 100%;
+    align-items: center;
+  }
+  .page .content form > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+/* }}}}}}}}}}}}}}}}}}}}} */

@@ -12,7 +12,7 @@ router.get('/:id', controller.preview)
 
 router.get('/:id/:part', controller.part)
 
-router.get('/:id/modify', controller.modify)
+router.get('/v/:id/modify', controller.modify)
 
 // courses post requests
 

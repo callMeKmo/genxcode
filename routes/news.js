@@ -10,7 +10,7 @@ router.get('/all', controller.all)
 
 router.get('/preview', controller.preview)
 
-router.get('/modify', controller.modify)
+router.get("/v/:id/modify", controller.modify);
 
 // news post requests
 

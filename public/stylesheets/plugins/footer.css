@@ -1,1 +1,16 @@
 /* footer style here */
+footer  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px;
+  color: var(--B3);
+}
+footer img {
+  transform: rotate(180deg);
+  position: relative;
+  top: -20px;
+}
+footer img:hover {
+  filter: var(--filter);
+}
