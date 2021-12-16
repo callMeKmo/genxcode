@@ -7,7 +7,7 @@ const controller = require('../controllers/user')
 
 // user get requests:
 
-router.get('/profile', middlewares.auth, controller.profile)
+router.get('/profile', controller.profile)
 
 router.get('/library/:type', middlewares.auth, controller.library)
 

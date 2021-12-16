@@ -1,1 +1,113 @@
-user profile here
+ <head>
+                   <link rel="stylesheet" href="/stylesheets/user/profile.css">
+ <title>Profile - GENX</title>
+                  </head>
+ <div class="content">
+    <div class="side-bar">
+      <div class="ico-to-side">
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+      <ul>
+        <li><a href="" class="profile">profile</a></li>
+        <li><a href="" class="mailbox">mailbox</a></li>
+        <li><a href="">my courses</a></li>
+        <li><a href="">my books</a></li>
+        <li><a href="">logout</a></li>
+      </ul>
+    </div>
+    <form class="">
+      <div class="first-div">
+        <h2>profile</h2>
+
+        <div>
+          <h2>profile</h2>
+          <div>
+            <label for="User_Name">User Name</label>
+            <section>
+              <input required type="text" name="" id="User_Name" title="input Your Name">
+              <button class="edit" title="Edit Your Name">
+                <img src="/media/icons/Icon material-edit.svg" alt="Edit Your Name">
+              </button>
+            </section>
+          </div>
+        </div>
+        <button class="profile">
+          <img src="/media/icons/Profile Pic.svg" alt="Profile">
+        </button>
+      </div>
+      <div class="second-div">
+        <div>
+          <div>
+            <label for="Email">Email</label>
+            <section>
+              <input required type="email" name="" id="Email" title="input required Your Email">
+              <button class="edit" title="Edit Your Email">
+                <img src="/media/icons/Icon material-edit.svg" alt="Edit Your Email">
+              </button>
+            </section>
+          </div>
+          <div>
+            <label for="Phone_Number">Phone Number</label>
+            <section>
+              <input required type="text" name="" id="Phone_Number" title="input required Your Phone Number">
+              <button class="edit" title="Edit Your Phone Number">
+                <img src="/media/icons/Icon material-edit.svg" alt="Edit Your Phone Number">
+              </button>
+            </section>
+          </div>
+        </div>
+        <div>
+          <div class="lang">
+            <div class="custom-select" style="width: 200px">
+              <label style="position: absolute; top: -25px; left: 0;" for="">gender</label>
+              <select>
+                <option value="0"></option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+              </select>
+            </div>
+            <script src="js/select-lang.js"></script>
+          </div>
+          <div>
+            <label for="Birthday">Birthday</label>
+            <section>
+              <input required type="date" name="" id="Birthday" title="input required Your Birthday">
+              <button class="edit" title="Edit Your Phone Number">
+                <img src="/media/icons/Icon material-edit.svg" alt="Edit Your Phone Number">
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class=" therd-div">
+        <div>
+          <label for="myInput">password</label>
+          <div class="pass-input">
+            <section>
+              <input required type="password" class="password" id="myInput">
+              <input required class="hidden" type="checkbox" onclick="pass()">
+              <img class="eye" src="/media/icons/Icon feather-eye.svg" alt="">
+              <button class="edit" title="Edit Your Phone Number">
+                <img src="/media/icons/Icon material-edit.svg" alt="Edit Your Phone Number">
+              </button>
+            </section>
+          </div>
+          <script src="js/showPassword.js"></script>
+        </div>
+        <div class="pass-input">
+          <label for="myNewInput">New password</label>
+          <section>
+            <input required type="password" class="password" id="myNewInput">
+            <input required class="hidden" type="checkbox" onclick="newPass()">
+            <img class="eye" src="/media/icons/feather-eye.svg" alt="">
+            <button class="edit" title="Edit Your New password">
+              <img src="/media/icons/Icon material-edit.svg" alt="Edit Your New password">
+            </button>
+          </section>
+        </div>
+        <script src="js/showPassword.js"></script>
+      </div>
+      <button> save </button>
+    </form>

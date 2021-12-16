@@ -1,0 +1,427 @@
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  --webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* scrollbar cascading */
+::-webkit-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+::-moz-scrollbar {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  width: 15px;
+}
+::-moz-scrollbar-thumb {
+  background-color: var(--ff);
+  border-radius: 10px;
+}
+::-moz-scrollbar-thumb:hover {
+  background-color: var(--B3);
+}
+
+/* --------------------------------- */
+@font-face {
+  font-family: "noto-sans";
+  src: url("../Font/Noto_Sans/NotoSans-Bold.ttf");
+  src: url("../Font/Noto_Sans/NotoSans-BoldItalic.ttf");
+  src: url("../Font/Noto_Sans/NotoSans-Italic.ttf");
+  src: url("../Font/Noto_Sans/NotoSans-Regular.ttf");
+}
+:root {
+  --mainfont: "noto-sans";
+  --B3: #b3b3b3;
+  --ff: #ffffff;
+  --filter: brightness(1.5);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body {
+  background-image: linear-gradient(
+    131.3deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(24, 24, 24, 1) 100%
+  );
+  color: white;
+  font-family: var(--mainfont);
+}
+
+/* small screen---------------------- */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*--meduim screen--------------- */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* large screen ---------------------*/
+@media (min-width: 1200px) {
+  .container {
+    width: 90%;
+  }
+}
+/* /* start header it will deleted later * */
+body > header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 1px solid #727272;
+  font-size: 60px;
+}
+/* .-. .-. .-. .-. .-. .-. .-. .-. */
+
+/* --------------------------------- */
+
+/* start mailbox */
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
+.content .side-bar {
+  position: relative;
+}
+
+.content .side-bar .ico-to-side {
+  position: absolute;
+  width: 50px;
+  padding: 10px;
+  left: 0;
+  top: 15px;
+  transition: 0.5s;
+  display: none;
+}
+.content .side-bar .ico-to-side section {
+  width: 100%;
+  height: 3px;
+  background-color: var(--ff);
+  margin-bottom: 5px;
+}
+.content .side-bar ul {
+  width: 170px;
+  position: relative;
+  top: 50px;
+  left: 10px;
+  transition: 3s;
+}
+
+.content .side-bar .ico-to-side:hover + ul {
+  display: block;
+  left: 10px;
+}
+@media (max-width: 870px) {
+  .content .side-bar ul {
+    display: none;
+    left: -100%;
+  }
+  .content .side-bar .ico-to-side {
+    display: block;
+    z-index: 1202;
+  }
+  .content {
+    gap: 0;
+  }
+}
+
+/* ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
+.content .side-bar ul a {
+  text-decoration: none;
+  color: var(--B3);
+  display: block;
+  padding: 20px 0 20px 10px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.content .side-bar ul a.profile {
+  filter: var(--filter);
+}
+.content .side-bar ul a:hover {
+  filter: var(--filter);
+}
+
+/* ---------------start form----------- */
+.contet form {
+  min-height: calc(100vh - 110px);
+  display: flex;
+  align-items: flex-start;
+  margin-left: 30px;
+  column-gap: 30px;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 15px;
+}
+form h2{
+  font-size: 60px;
+  text-transform: capitalize;
+  margin: 10px 0 30px;
+}
+form input {
+  background-color: #2a2a2c;
+  border: none;
+  border-radius: 10px;
+  padding:  0 5px;
+  color: var(--B3);
+  width: 250px;
+  height: 30px;
+}
+form input:focus{
+  outline: none;
+  font-size: 16px;
+}
+form .edit,
+form .profile{
+  background-color: transparent;
+  border: none;
+}
+form .edit{
+  margin-left: 20px;
+  cursor: pointer;
+  padding-top: 5px;
+}
+form .edit >img{
+  width: 20px;
+}
+
+form >div.first-div{
+  height: 200px;
+  display: flex;
+  gap: 40px;
+}
+form > .first-div >div{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+form .profile >img{
+width: 200px;
+}
+label{
+  text-transform: capitalize;
+color: var(--B3);
+margin-bottom: 5px;
+display: block;
+}
+.second-div{
+  margin-top: 30px;
+  display: flex;
+ column-gap: 40px;
+}
+.second-div >div:nth-child(2){
+margin-top: 25px;
+}
+.second-div >div:nth-child(2) .lang{
+
+margin-bottom: 30px;
+}
+.second-div >div >div section{
+  margin-bottom: 30px;
+}
+
+.therd-div{
+  display: flex;
+  column-gap: 30px;
+}
+.therd-div .pass-input >section{
+width: 300px;
+border-radius: 10px;
+height: 30px;
+position: relative;
+}
+.therd-div .pass-input >section .eye{
+position: absolute;
+left: 250px;
+top: 60%;
+transform: translate(calc( -100% - 5px) , -50%);
+width: 30px;
+}
+.therd-div .pass-input >section .hidden{
+display: inline;
+position: absolute;
+left: 250px;
+top: 60%;
+transform: translate(calc( -100% - 5px) , -50%);
+height: 30px;
+width: 30px;
+opacity: 0;
+cursor: pointer;
+z-index: 5;
+}
+.therd-div .pass-input >section .hidden:checked + img{
+  filter: var(--filter);
+}
+form input.password{
+  padding-right: 40px;
+}
+form>button{
+  align-self: flex-end;
+  border: none;
+  width: 70px;
+  border-radius: 10px;
+  margin: 60px 50px;
+  cursor: pointer;
+  transition: .3s;
+}
+form>button:hover{
+  filter: invert(.2);
+}
+/* --------------select----------------- */
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none;
+  
+  /* hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: #2a2a2c;
+  height: 30px;
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected::after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: -30px;
+  right: -30px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+ 
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  width: 250px;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #2a2a2c;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  width: 250px;
+  border-radius: 10px;
+  
+
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* --------End Select--------- */
+
+.first-div >h2{
+  display: none;
+}
+@media (max-width:710px) {
+form{
+  align-items: center;
+  margin: 0;
+  padding: 5px;
+}
+  .first-div{
+    flex-direction: column;
+    height: initial !important;
+    align-items: center;
+  }
+  .profile{
+    order: -1;
+  }
+  .first-div >h2{
+    display: block;
+    order: -2;
+  }
+  .first-div >div >h2{
+    display: none;
+  }
+  form > .first-div >div{
+    height: initial;
+  }
+  .second-div{
+    flex-direction: column;
+    align-items: center;
+  }
+  .therd-div{
+    flex-direction: column;
+  }
+  .therd-div>div.pass-input{
+    margin-top: 30px;
+  }
+  form>button{
+    align-self: center;
+    margin: 30px 0 10px;
+  }
+}
