@@ -8,13 +8,28 @@ var crypto = require('crypto')
 //checking if user admin or owner
 
 exports.admin = async(req,res,next)=>{
-    if (req.userInfo){
-        const user = userInfo
-        if (user.type === "admin" || user.type === "owner" || user.type === "developer"){
-            next()
-        }else {
-            res.cookie('note','err-1010')
-        }
+    if (req.key){
+        jwt.verify(req.key,process.env.ACCESS_TOKEN_SECRET,async(err,data)=>{
+            if (err) {
+                res.redirect(`/${req.originalUrl}`)
+            } else {
+                const key = await Key.findOne({dakey: data.d}).exec()
+                const decipher = crypto.createDecipheriv(process.env.ALGORITHM, key.crkey, key.ivkey)
+                    let decryptedData = decipher.update(data.o, "hex", "utf-8")
+                    decryptedData += decipher.final("utf8")
+                    var obj = Buffer.from(decryptedData, 'hex').toString('utf-8').split(`${process.env.STRING_CMD}+`)[1]
+                    const user = await User.findOne({email:obj,basekey:data.k}).exec()
+                    if (user){
+                        if (user.type === "admin" || user.type === "owner" || user.type === "developer"){
+                            next()
+                        }else {
+                            res.cookie('note','err-1010')
+                        }
+                    } else {
+                        return res.cookie('note','err-1003'),res.redirect('/')
+                    }
+            }
+        })
     } else {
         res.cookie('note','err-1011'),res.redirect('/')
     }

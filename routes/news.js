@@ -11,7 +11,7 @@ router.get("/all", controller.all);
 
 router.get("/preview", controller.preview);
 
-router.get("/v/:id/modify", controller.modify);
+router.get('/v/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
 
 // news post requests
 

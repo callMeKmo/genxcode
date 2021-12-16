@@ -7,27 +7,25 @@ const controller = require('../controllers/admin')
 
 // admin get requests:
 
-router.use(middlewares.auth,middlewares.admin)
+router.get('/reports', middlewares.auth,middlewares.admin, controller.reports)
 
-router.get('/reports', controller.reports)
+router.get('/orders', middlewares.auth,middlewares.admin, controller.orders)
 
-router.get('/orders', controller.orders)
+router.get('/users', middlewares.auth,middlewares.admin, controller.users)
 
-router.get('/users', controller.users)
+router.get('/analysis', middlewares.auth,middlewares.admin, controller.analysis)
 
-router.get('/analysis', controller.analysis)
+router.get('/log', middlewares.auth,middlewares.admin, controller.log)
 
-router.get('/log', controller.log)
+router.get('/loadData/:type/:date', middlewares.auth,middlewares.admin, controller.daData)
 
-router.get('/loadData/:type/:date', controller.daData)
-
-router.get('/inspect/:type/:id', controller.daDoc)
+router.get('/inspect/:type/:id', middlewares.auth,middlewares.admin, controller.daDoc)
 
 // admin post requests:
 
-router.post('/users/:id', middlewares.owner, controller.usersChange)
+router.post('/users/:id', middlewares.auth,middlewares.admin, middlewares.owner, controller.usersChange)
 
-router.delete('/users/:id', controller.usersRemove)
+router.delete('/users/:id', middlewares.auth,middlewares.admin, controller.usersRemove)
 
 //export admin router:
 

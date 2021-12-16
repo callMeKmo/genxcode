@@ -13,3 +13,13 @@ document.querySelectorAll('.func')[0].addEventListener('click',e=>{
         document.querySelectorAll('.menuCatch')[0].classList.replace('menuCatch','menuDrop')
     }
 })
+
+var ico = document.querySelectorAll('.ico-to-side')
+
+if (ico.length > 0){
+    ico.forEach(element=>{
+        element.addEventListener('click',e=>{
+            document.querySelectorAll(`.mySpecialUl#nav${element.id}`)[0].style.display = 'block'
+        })
+    })
+}

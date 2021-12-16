@@ -62,3 +62,11 @@ date 12/14/2021
         content: err system language and comments for all current codes.
 
         notes: only creating and updating and removing courses books news left.
+
+date 12/14/2021
+
+    report by Mahmoud Mahmoud (update1.3.2)
+
+        content: front end completed succesfully
+
+        notes: themes and language not available currently

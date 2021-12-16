@@ -13,7 +13,7 @@ router.get("/:id", controller.preview);
 
 router.get("/:id/:part", middlewares.auth, controller.part);
 
-router.get("/v/:id/modify", controller.modify);
+router.get('/v/:id/modify',  middlewares.auth, middlewares.admin, controller.modify)
 
 // courses post requests
 
