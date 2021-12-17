@@ -105,6 +105,7 @@ nav .container h1 {
   text-transform: capitalize;
   color: var(--ff);
 }
+
 nav .container .result{
   font-size: 40px;
   margin-left: 50px;
@@ -145,6 +146,9 @@ nav .container button:hover img {
   }
   nav .container input[type="search"] {
     width: 250px;
+  }
+  nav .container h1{
+    font-size: 40px;
   }
 }
 /* small screen---------------------- */

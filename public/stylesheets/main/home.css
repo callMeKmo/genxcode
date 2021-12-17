@@ -74,8 +74,7 @@ body > header {
 /* .-. .-. .-. .-. .-. .-. .-. .-. */
 
 /* start .discover */
-.discover {
-}
+
 .discover .container {
   display: flex;
   flex-direction: column;
@@ -161,8 +160,7 @@ body > header {
 }
 /* ----------------------------- */
 /* start section2 */
-.section2 {
-}
+
 .section2 .container {
   min-height: calc(100vh - 100px);
   display: flex;
@@ -284,6 +282,7 @@ body > header {
   .section3 .container {
     flex-direction: column !important;
     align-items: center;
+    justify-content: center;
   }
   .section3 .container .right {
     width: 100%;
@@ -297,6 +296,9 @@ body > header {
 @media (max-width: 767px) {
   .section3 .right h2 {
     font-size: 40px;
+  }
+  .About-Us .content h2{
+    font-size: 45px !important;
   }
 }
 
@@ -322,6 +324,7 @@ body > header {
   font-weight: normal;
   color: var(--B3);
   line-height: 1.6;
+  text-align: center;
 }
 /* meduim screen---------------------- */
 @media (max-width: 991px) {
