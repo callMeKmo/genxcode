@@ -76,6 +76,7 @@
   height: 100%;
   flex-grow: 1;
   justify-content: space-around;
+  width: 90%;
 }
 
 #nav ul li a {
@@ -130,7 +131,9 @@ ul li a {
     padding: 5px 10px;
   }
 }
-
+.hide-txt{
+  display: none;
+}
 @media (max-width: 580px) {
   #nav {
     flex-direction: column;
@@ -147,6 +150,15 @@ ul li a {
   }
   .show-hide {
     display: none;
+  }
+  .hide-txt{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    color: var(--B3);
+    line-height: 64px;
+  font-family: var(--mainfont);
   }
   .hide-img {
     display: block;
